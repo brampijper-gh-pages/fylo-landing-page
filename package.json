@@ -1,0 +1,25 @@
+{
+  "name": "save-the-bees",
+  "version": "0.0.1",
+  "description": "A frontend project about saving the bee population",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brampijper/save-the-bees.git"
+  },
+  "keywords": [
+    "webpack",
+    "vue",
+    "frontend",
+    "bee"
+  ],
+  "author": "Bram Pijper",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/brampijper/save-the-bees/issues"
+  },
+  "homepage": "https://github.com/brampijper/save-the-bees#readme"
+}
