@@ -4,7 +4,8 @@
   "description": "A frontend project about saving the bee population",
   "main": "index.js",
   "scripts": {
-    "build": "webpack"
+    "build": "webpack",
+    "watch": "webpack --watch"
   },
   "repository": {
     "type": "git",
@@ -24,6 +25,7 @@
   "homepage": "https://github.com/brampijper/save-the-bees#readme",
   "dependencies": {},
   "devDependencies": {
-    "webpack": "^4.39.3"
+    "webpack": "^4.39.3",
+    "webpack-cli": "^3.3.8"
   }
 }
