@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack",
-    "watch": "webpack --watch"
+    "dev": "npm run webpack-dev-server -- --env.env=dev",
+    "webpack-dev-server": "webpack-dev-server --open"
   },
   "repository": {
     "type": "git",
@@ -23,9 +24,16 @@
     "url": "https://github.com/brampijper/save-the-bees/issues"
   },
   "homepage": "https://github.com/brampijper/save-the-bees#readme",
-  "dependencies": {},
+  "dependencies": {
+    "vue": "^2.6.10"
+  },
   "devDependencies": {
+    "file-loader": "^4.2.0",
+    "html-webpack-plugin": "^3.2.0",
+    "url-loader": "^2.1.0",
     "webpack": "^4.39.3",
-    "webpack-cli": "^3.3.8"
+    "webpack-cli": "^3.3.8",
+    "webpack-dev-server": "^3.8.0",
+    "webpack-merge": "^4.2.2"
   }
 }
