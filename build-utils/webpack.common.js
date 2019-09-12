@@ -1,9 +1,10 @@
 const commonPaths = require('./common-paths');
 const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 const config = {
-    entry: './src/index.js',
+    entry: './src/app.js',
     output: {
         filename: 'bundle.js',
         path: commonPaths.outputPath
@@ -20,12 +21,47 @@ const config = {
                         }
                     }
                 ]
-            }
+            },
+            {
+                test: /\.(png|jpg?g|gif)$/i,
+                use: [
+                    {
+                        loader: 'file-loader',
+                    },
+                ],
+
+            },
+            {
+                test: /\.vue$/,
+                loader: 'vue-loader',
+                exclude: /node_modules/
+            },
+            {
+                test: /\.js$/,
+                exclude: /(node_modules)/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env']
+                    },
+                },
+            },
+            {
+                test: /\.css$/,
+                use: [
+                    'vue-style-loader',
+                    'css-loader'
+                ],
+
+            },
         ]
     },
     plugins: [
         new webpack.ProgressPlugin(),
-        new HtmlWebpackPlugin()
+        new HtmlWebpackPlugin({
+            template: 'index.html',
+        }),
+        new VueLoaderPlugin()
     ]
 }
 
