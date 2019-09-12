@@ -1,6 +1,6 @@
 const config = {
-    devtool: 'eval-source-map',
     mode: 'development',
+    devtool: 'eval-source-map',
     devServer: {
         contentBase: './dist'
     }
