@@ -2,6 +2,7 @@ const commonPaths = require('./common-paths');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 const config = {
     entry: './src/app.js',
@@ -12,12 +13,12 @@ const config = {
     module: {
         rules: [
             {
-                test: /\.png/,
+                test: /\.(png|jpg|gif)$/i,
                 use: [
                     {
                         loader: 'url-loader',
                         options: {
-                            limit: 10000
+                            limit: 30,
                         }
                     }
                 ]
@@ -27,6 +28,9 @@ const config = {
                 use: [
                     {
                         loader: 'file-loader',
+                        options: {
+                            outputPath: 'assets/images'
+                        }
                     },
                 ],
 
@@ -53,8 +57,11 @@ const config = {
         new HtmlWebpackPlugin({
             template: 'index.html',
         }),
-        new VueLoaderPlugin()
-    ]
-}
+        new VueLoaderPlugin(),
+        new CopyPlugin([
+            { from: './src/assets/images', to: 'assets/images'}, 
+        ]),
+    ],
+};
 
 module.exports = config;
