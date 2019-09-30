@@ -2,29 +2,28 @@
     <nav class="main-nav">
         <img class="main-nav__logo" src="http://lorempixel.com/400/400" />
         <ul class="main-nav__menu">
-            <li class="main-nav__menu-item">
+            <li class="main-nav__menu-item" v-for="(item, index) in menu" :key="index">
                 <a class="main-nav__menu-item-link" href="#">
-                    The dying bee
-                </a>
-            </li>
-            <li class="main-nav__menu-item">
-                <a class="main-nav__menu-item-link" href="#">
-                    The causes
-                </a>
-            </li>
-            <li class="main-nav__menu-item">
-                <a class="main-nav__menu-item-link" href="#">
-                    What can we do?
-                </a>
-            </li>
-            <li class="main-nav__menu-item">
-                <a class="main-nav__menu-item-link" href="#">
-                    
+                    {{ item.text }}
                 </a>
             </li>
         </ul>
     </nav>
 </template>
+
+<script>
+export default {
+    data() {
+        return {
+            menu: [
+                {text: 'The dying bee'},
+                {text: 'The causes'},
+                {text: 'What can we do?'}
+            ]
+        }
+    }
+}
+</script>
 
 <style scoped lng="CSS">
 .main-nav {
