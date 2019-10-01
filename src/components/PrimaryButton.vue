@@ -1,12 +1,12 @@
 <template>
-    <button>
-        Read more evidence
-    </button>
+    <button>{{buttonText}}</button>
 </template>
 
 <script>
 export default {
-    //add props for button text so it's re-usable
+    props: {
+        buttonText: String,
+    }
 }
 </script>
 
@@ -17,5 +17,7 @@ button {
     border-radius: 15px;
     border: 0px;
     padding: 0px;
+    color: white; 
+    background: linear-gradient(90deg, hsl(198, 60%, 50%) 50%, hsl(176, 68%, 64%) 105%);
 }
 </style>
