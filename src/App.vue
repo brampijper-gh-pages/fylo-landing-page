@@ -1,8 +1,8 @@
 <template>
     <div>
-        <the-navbar> </the-navbar>
-        <base-content> </base-content>
-        <the-footer> </the-footer>
+        <the-navbar />
+        <base-content />
+        <the-footer />
     </div>
 </template>
 
@@ -19,6 +19,3 @@ export default {
     }
 }
 </script>
-
-<style scoped>
-</style>
