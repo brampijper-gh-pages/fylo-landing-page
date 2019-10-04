@@ -1,29 +1,29 @@
 <template>
     <main role="main" class="main">
 
-        <div class="main__first-section">
-            <img class="main__first-section-img" src="assets/images/illustration-intro.png" />
-            <article class="main__first-section-article">
+        <div class="a-section">
+            <img class="a-section__img" src="assets/images/illustration-intro.png" />
+            <article class="a-section__article">
                 <h1> All your files in one secure location</h1>
                 <p> 
                     Filo stores all your most important files in one secure location.
-                    Access them wherever you need, share and collaborate with friends family and co-workers
+                    Access them wherever you need, share and collaborate with friends family and co-workers.
                 </p>
             </article>
             <primary-button button-text="Get Started"> </primary-button>
         </div>
 
-        <div class="main__second-section">
-            <article clas="main__second-section-article" v-for="(article, index) in articles" :key="index">
-                <img class="main__second-section-img" :src="article.image" />
+        <div class="b-section">
+            <article class="b-section__article" v-for="(article, index) in articles" :key="index">
+                <img class="b-section__img" :src="article.image" />
                 <h3> {{ article.title }} </h3>
                 <p> {{ article.paragraph }} </p>
             </article>
         </div>
 
-        <div class="main__third-section">
-            <img class="main__third-section-img" src="assets/images/illustration-stay-productive.png" />
-            <article class="main__third-section-article">
+        <div class="c-section">
+            <img class="c-section__img" src="assets/images/illustration-stay-productive.png" />
+            <article class="c-section__article">
                 <h1> Stay productive, wherever you are</h1>
                 <p>
                     Never let location be an issue when accessing your files. 
@@ -35,19 +35,19 @@
                     family and colleagues for live collaboration. No
                     email attachments required.
                 </p>
-                <primary-button buttonText="See how Fylo works" />
+                <primary-button class="c-section__button" buttonText="See how Fylo works" />
             </article>
         </div>
 
-        <div class="main__fourth-section">
-            <img class="main__fourth-section-image" src="assets/images/bg-quotes.png" />
-            <div class="main__fourth-section-card" v-for="(person, index) in cards" :key="index"> 
-                <p class="main__fourth-section-card-intro"> {{ person.intro }} </p>
+        <div class="d-section">
+            <img class="d-section__image" src="assets/images/bg-quotes.png" />
+            <div class="d-section__card" v-for="(person, index) in cards" :key="index"> 
+                <p class="d-section__intro"> {{ person.intro }} </p>
 
-                <section class="main__fourth-section-article">
-                    <img class="main__fourth-section-article-image" :src="person.image" />
+                <section class="d-section__article">
+                    <img class="d-section__article-image" :src="person.image" />
                     <article>
-                        <h3> {{person.name }} </h3>
+                        <h3 class="d-section__title"> {{person.name }} </h3>
                         <sub> {{person.title }} </sub>
                     </article>
                 </section>
@@ -122,54 +122,56 @@ export default {
     text-align:center;
 }
 
-.main__first-section {
+.a-section {
     margin: 0 auto;
     width: 85%;
     margin-bottom: 75px;
 }
 
-.main__first-section-img {
+.a-section__img {
     max-width: 550px;
     min-width: 300px;
     width: 75%;
     height: auto;
 }
 
-.main__first-section-article {
-    max-width: 50vw;
+.a-section__article {
+    max-width: 400px;
     margin: 0 auto;
+    margin-bottom: 25px;
+    margin-top: 30px;
 }
 
-.main__second-section {
+.b-section {
     width: 70%;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    margin-bottom: 75px;
+    margin-bottom: 100px;
 }
 
-.main__second-section-img {
+.b-section__article {
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 300px;
+}
+
+.b-section__img {
     height: 75px;
     width: auto;
 }
 
-.main__second-section-title {
-    margin-bottom: 50px;
-}
-
-.main__third-section {
+.c-section {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
     align-items:center;
-    /* width: 75vw; */
     margin: 0 auto;
-    margin-bottom: 85px;
-
+    margin-bottom: 95px;
 }
 
-.main__third-section-img {
+.c-section__img {
     max-width: 400px;
     min-width: 175px;
     width: 75%;
@@ -177,19 +179,26 @@ export default {
     margin: 0 auto;
 }
 
-.main__third-section-article {
+.c-section__article {
     margin: 0 auto;
+    max-width: 375px;
+    text-align:left;
     width: 75%;
+    
 }
 
-.main__fourth-section {
+.c-section__button {
+    margin-top: 10px;
+}
+
+.d-section {
     width: 60vw;
     display: grid;
     grid-template-columns: 1fr;
     margin: 0 auto;
 }
 
-.main__fourth-section-card {
+.d-section__card {
     padding-bottom: 15px;
     margin: 0 auto;
     background-color: hsl(219, 30%, 18%);
@@ -200,13 +209,13 @@ export default {
     color: hsl(0, 0%, 100%);
 }
 
-.main__fourth-section-image {
+.d-section__image {
     position:absolute;
     width: 35px;
     height:auto;
 }
 
-.main__fourth-section-card-intro {
+.d-section__intro {
     font-style:italic;
     margin: 0 auto;
     width: 85%;
@@ -214,7 +223,7 @@ export default {
     margin-top: 15px;
 }
 
-.main__fourth-section-article {
+.d-section__article {
     display: grid;
     grid-template-columns: 1fr 2fr;
     width: 75%;
@@ -223,12 +232,12 @@ export default {
     margin: 0 auto;
 }
 
-.main__fourth-section-article h3{
+.d-section__title{
     margin: 0;
     padding: 0;
 }
 
-.main__fourth-section-article-image {
+.d-section__article-image {
     width: 50px;
     height: 50px;
     float:left;
@@ -242,33 +251,24 @@ export default {
         width: 100vw;
     }
 
-    .main__first-section-article {
-        max-width: 95vw;
-    }
-
-    .main__second-section {
+    .b-section {
         width: 75vw;
         grid-template-columns: 1fr;
     }
 
-    .main__third-section {
+    .c-section {
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr;
     }
 
-    .main__third-section-article {
+    .c-section__article {
         text-align:center;
-        width: 85vw;
     }
 }
 
 /* for wide resolution screens */
 @media screen and (min-width: 850px) {
-       .main__first-section-article {
-        max-width: 35vw;
-    } 
-
-    .main__fourth-section {
+    .d-section {
         width: 85vw;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
