@@ -264,6 +264,10 @@ export default {
     .c-section__article {
         text-align:center;
     }
+
+    .d-section {
+        width: 90vw;
+    }
 }
 
 /* for wide resolution screens */
