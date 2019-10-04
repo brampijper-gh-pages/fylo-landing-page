@@ -1,6 +1,6 @@
 <template>
     <nav class="main-nav">
-        <img class="main-nav__logo" src="http://lorempixel.com/400/400" />
+        <img class="main-nav__logo" src="/assets/images/logo.svg" />
         <ul class="main-nav__menu">
             <li class="main-nav__menu-item" v-for="(item, index) in menu" :key="index">
                 <a class="main-nav__menu-item-link" href="#">
@@ -16,16 +16,16 @@ export default {
     data() {
         return {
             menu: [
-                {text: 'The dying bee'},
-                {text: 'The causes'},
-                {text: 'What can we do?'}
+                {text: 'Features'},
+                {text: 'Reviews'},
+                {text: 'Contact'}
             ]
         }
     }
 }
 </script>
 
-<style scoped lng="CSS">
+<style scoped>
 .main-nav {
     display: grid;
     grid-template-columns: 1fr 10fr;
@@ -33,8 +33,9 @@ export default {
 }
 
 .main-nav__logo {
-    width: auto;
-    height: 100%;
+    width: 100%;
+    min-width: 60px;
+    height: auto;
 }
 
 .main-nav__menu {
@@ -57,24 +58,19 @@ export default {
 
 /* only for smartphones */
 @media screen and (max-width: 480px) {
-    .main-nav {
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1.5fr;
+    .main-nav__logo {
+        min-width: 35px;
+        height: auto;
+        margin-left: 5vw;
     }
 
-    .main-nav__menu {
-        text-align:center;
-        display: block;
+    .main-nav {
+        grid-template-columns: 1fr 4fr;
+        margin: 6vh 4vw 6vh 2vw;
     }
 
     .main-nav__menu-item {
-        display: block;
-        margin: 15px 0px 0px 0px;
-
-    }
-
-    .main-nav__logo {
-        margin: 0 auto;
+        margin: 0px 20px 0px 0px;
     }
 }
 </style>
