@@ -149,6 +149,7 @@ export default {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     margin-bottom: 100px;
+    margin-top: 50px;
 }
 
 .b-section__article {
@@ -169,6 +170,7 @@ export default {
     align-items:center;
     margin: 0 auto;
     margin-bottom: 95px;
+    margin-top: 25px;
 }
 
 .c-section__img {
@@ -196,6 +198,8 @@ export default {
     display: grid;
     grid-template-columns: 1fr;
     margin: 0 auto;
+    margin-bottom: 200px;
+    margin-top: 75px;
 }
 
 .d-section__card {
