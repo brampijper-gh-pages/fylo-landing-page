@@ -14,11 +14,11 @@
         </div>
 
         <div class="b-section">
-            <article class="b-section__article" v-for="(article, index) in articles" :key="index">
-                <img class="b-section__img" :src="article.image" />
+            <div class="b-section__icon-grid" v-for="(article, index) in articles" :key="index">
+                <img class="icon-grid__img" :src="article.image" />
                 <h3> {{ article.title }} </h3>
                 <p> {{ article.paragraph }} </p>
-            </article>
+            </div>
         </div>
 
         <div class="c-section">
@@ -40,7 +40,7 @@
         </div>
 
         <div class="d-section">
-            <img class="d-section__image" src="assets/images/bg-quotes.png" />
+            <img class="d-section__img" src="assets/images/bg-quotes.png" />
             <div class="d-section__card" v-for="(person, index) in cards" :key="index"> 
                 <p class="d-section__intro"> {{ person.intro }} </p>
 
@@ -51,6 +51,19 @@
                         <sub> {{person.title }} </sub>
                     </article>
                 </section>
+            </div>
+        </div>
+
+        <div class="e-section">
+            <h1 class="e-section__title"> Get early access today </h1>
+            <p class="e-section__paragraph"> 
+                It only takes minutes to sign up and our free starter tier is extremely generous. 
+                If you have any questions, our support team is happy to help you 24/7.
+            </p>
+
+            <div class="e-section__input">
+                <input class="input__field" placeholder="Your emailadress ;-)" />
+                <primary-button buttonText="Get started for FREE"/>
             </div>
         </div>
     </main>
@@ -152,13 +165,13 @@ export default {
     margin-bottom: 100px;
 }
 
-.b-section__article {
+.b-section__icon-grid {
     margin: 0 auto;
     padding: 20px;
     max-width: 300px;
 }
 
-.b-section__img {
+.icon-grid__img {
     height: 75px;
     width: auto;
 }
@@ -214,7 +227,7 @@ export default {
     color: hsl(0, 0%, 100%);
 }
 
-.d-section__image {
+.d-section__img {
     position:absolute;
     width: 35px;
     height:auto;
@@ -249,6 +262,45 @@ export default {
     border-radius: 50%;
 }
 
+.e-section {
+    z-index:1;
+    width: 55%;
+    background-color: hsl(217, 28%, 15%);
+    margin: 0 auto;
+    border-radius: 10px;
+    padding: 35px;
+    -webkit-box-shadow: 2px 2px 5px -1px rgba(0,0,0,0.56);
+    -moz-box-shadow: 2px 2px 5px -1px rgba(0,0,0,0.56);
+    box-shadow: 2px 2px 5px -1px rgba(0,0,0,0.56)
+}
+
+.e-section__title {
+    margin-top: 0px;
+}
+
+.e-section__paragraph {
+    width: 60%;
+    margin: 0 auto;
+    padding: 5px 0px 30px 0px;
+}
+
+.e-section__input {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-items: center;;
+    gap: 15px;
+    margin: 0 auto;
+    width: 70%;
+}
+
+.input__field {
+    width: 100%;
+    border-radius: 13px;
+    height: 43px;
+    border: 0px;
+    text-align:center;
+}
 
 /* only for smartphones */
 @media screen and (max-width: 480px) {
@@ -273,6 +325,10 @@ export default {
     .d-section {
         width: 90vw;
     }
+
+    .e-section {
+        width: 70%;
+    }
 }
 
 /* for wide resolution screens */
@@ -281,6 +337,13 @@ export default {
         width: 85vw;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .e-section__input {
+        grid-template-columns: 2fr 1fr;
+        justify-items:end;
+        gap: 15px;
+        width: 70%;   
     }
 }
 </style>
