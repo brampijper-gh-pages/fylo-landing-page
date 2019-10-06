@@ -3,7 +3,7 @@
         <img class="main-nav__logo" src="/assets/images/logo.svg" />
         <ul class="main-nav__menu">
             <li class="main-nav__menu-item" v-for="(item, index) in menu" :key="index">
-                <a class="main-nav__menu-item-link" href="#">
+                <a class="main-nav__menu-item-link" href="#" @click.prevent="calculateScrollHeight(item.linkedSection)">
                     {{ item.text }}
                 </a>
             </li>
@@ -16,12 +16,31 @@ export default {
     data() {
         return {
             menu: [
-                {text: 'Features'},
-                {text: 'Reviews'},
-                {text: 'Contact'}
+                {text: 'Features', linkedSection: 'a-section'},
+                {text: 'Reviews', linkedSection: 'b-section'},
+                {text: 'Contact', linkedSection: 'c-section'}
             ]
         }
+    },
+    methods: {
+        calculateScrollHeight(linkedSection) {
+            const sectionArr = Array.from(document.getElementsByClassName(linkedSection))
+
+            if(sectionArr.length) {
+                const offsetHeight = sectionArr[0].offsetHeight;
+                const offsetTop = sectionArr[0].offsetTop;
+                this.scrollToSection(offsetHeight + offsetTop)
+            }
+        },
+        scrollToSection(height) {
+            window.scroll({
+                top: height,
+                left: 0,
+                behavior: 'smooth'
+            });
+        }
     }
+
 }
 </script>
 
