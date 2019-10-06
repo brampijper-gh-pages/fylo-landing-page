@@ -17,8 +17,8 @@ export default {
         return {
             menu: [
                 {text: 'Features', linkedSection: 'a-section'},
-                {text: 'Reviews', linkedSection: 'b-section'},
-                {text: 'Contact', linkedSection: 'c-section'}
+                {text: 'Reviews', linkedSection: 'c-section'},
+                {text: 'Contact', linkedSection: 'e-section'}
             ]
         }
     },
