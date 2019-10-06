@@ -212,7 +212,7 @@ export default {
     display: grid;
     grid-template-columns: 1fr;
     margin: 0 auto;
-    margin-bottom: 200px;
+    margin-bottom: 175px;
     margin-top: 75px;
 }
 
@@ -291,7 +291,6 @@ export default {
     justify-items: center;;
     gap: 15px;
     margin: 0 auto;
-    width: 70%;
 }
 
 .input__field {
@@ -327,6 +326,7 @@ export default {
     }
 
     .e-section {
+        margin: 0 auto;
         width: 70%;
     }
 }
