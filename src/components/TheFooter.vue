@@ -108,7 +108,7 @@
 }
 
 .footer-list__social {
-    display: inline-block;
+    display: flex;
     margin: 0 auto;
 }
 
@@ -119,6 +119,10 @@
 @media screen and (max-width: 480px) {
     .footer {
         margin-top: -195px;
+    }
+
+    .footer__logo {
+        margin-top: 75px;
     }
 
     .footer__footer-list {
