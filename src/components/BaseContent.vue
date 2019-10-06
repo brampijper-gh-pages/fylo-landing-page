@@ -167,18 +167,19 @@ export default {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
+    gap: 1vw;
     align-items:center;
+    justify-items: end;
     margin: 0 auto;
     margin-bottom: 95px;
     margin-top: 25px;
 }
 
 .c-section__img {
-    max-width: 400px;
-    min-width: 175px;
+    max-width: 550px;
+    min-width: 210px;
     width: 75%;
     height: auto;
-    margin: 0 auto;
 }
 
 .c-section__article {
@@ -262,6 +263,7 @@ export default {
     .c-section {
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr;
+        justify-items: center;
     }
 
     .c-section__article {
