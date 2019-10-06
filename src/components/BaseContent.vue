@@ -83,7 +83,7 @@ export default {
                 },
                 {
                     title: "Store any type of file",
-                    paragraph: "Wheter you're sharing holidays photos or work documents, Fylo has you covered allowing for all file types to be securely stored and shared.",
+                    paragraph: "Wether you're sharing holidays photos or work documents, Fylo has you covered allowing for all file types to be securely stored and shared.",
                     image: "assets/images/icon-any-file.svg",
                 },
 
@@ -143,13 +143,13 @@ export default {
 }
 
 .b-section {
-    width: 70%;
+    gap: 40px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
+    margin-top: 100px;
     margin-bottom: 100px;
-    margin-top: 50px;
 }
 
 .b-section__article {
@@ -256,7 +256,6 @@ export default {
     }
 
     .b-section {
-        width: 75vw;
         grid-template-columns: 1fr;
     }
 
