@@ -62,7 +62,8 @@
 <style scoped>
 
 .footer {
-    padding: 200px 4vw 150px 4vw;
+    margin-top: -115px;
+    padding: 230px 4vw 50px 4vw;
     background-color: hsl(216, 53%, 9%);
 }
 
@@ -115,7 +116,11 @@
     margin: 0px 0.8vw 0px 0.8vw;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 480px) {
+    .footer {
+        margin-top: -195px;
+    }
+
     .footer__footer-list {
         grid-template-columns: 1fr;
         grid-template-rows: 0.7fr 1fr 1fr 1fr 1fr;
