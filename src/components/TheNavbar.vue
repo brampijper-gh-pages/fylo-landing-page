@@ -2,9 +2,9 @@
     <nav class="main-nav">
         <img class="main-nav__logo" src="/assets/images/logo.svg" />
         <ul class="main-nav__menu">
-            <li class="main-nav__menu-item" v-for="(item, index) in menu" :key="index">
-                <a class="main-nav__menu-item-link" href="#" @click.prevent="calculateScrollHeight(item.linkedSection)">
-                    {{ item.text }}
+            <li class="main-nav__menu-item" v-for="(link, index) in menu" :key="index">
+                <a class="main-nav__menu-item-link" href="#" @click.prevent="calculateScrollHeight(link.scrollTo)">
+                    {{ link.text }}
                 </a>
             </li>
         </ul>
@@ -16,19 +16,19 @@ export default {
     data() {
         return {
             menu: [
-                {text: 'Features', linkedSection: 'a-section'},
-                {text: 'Reviews', linkedSection: 'c-section'},
-                {text: 'Contact', linkedSection: 'e-section'}
+                {text: 'Features', scrollTo: 'a-section'},
+                {text: 'Reviews', scrollTo: 'b-section'},
+                {text: 'Contact', scrollTo: 'e-section'}
             ]
         }
     },
     methods: {
-        calculateScrollHeight(linkedSection) {
-            const sectionArr = Array.from(document.getElementsByClassName(linkedSection))
+        calculateScrollHeight(scrollTo) {
+            const section = document.getElementsByClassName(scrollTo)
 
-            if(sectionArr.length) {
-                const offsetHeight = sectionArr[0].offsetHeight;
-                const offsetTop = sectionArr[0].offsetTop;
+            if(section.length) {
+                const offsetHeight = section[0].offsetHeight;
+                const offsetTop = section[0].offsetTop;
                 this.scrollToSection(offsetHeight + offsetTop)
             }
         },
@@ -40,7 +40,6 @@ export default {
             });
         }
     }
-
 }
 </script>
 
