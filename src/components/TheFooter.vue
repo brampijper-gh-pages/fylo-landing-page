@@ -8,8 +8,8 @@
                 </span>
                 
                 <p class="paragraph--spacing">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorem, vitae amet, modi,
-                    cum impedit at enim ad dolores harum quis autem dignissimos quaerat.
+                    At Fylo we believe in security, no matter where you acess your private files.
+                    That's why we work in a secure area where people take control of their security.
                 </p>
             </li>
 
@@ -64,7 +64,7 @@
 .footer {
     margin-top: -115px;
     padding: 230px 4vw 50px 4vw;
-    background-color: hsl(216, 53%, 9%);
+    background-color: hsl(216, 53%, 7%);
 }
 
 .footer__logo {
