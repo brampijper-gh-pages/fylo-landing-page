@@ -1,19 +1,34 @@
 <template>
-    <button>{{buttonText}}</button>
+    <button @click="onClick" :class="'Button ' + buttonSize">
+        <slot>Button</slot>
+    </button>
 </template>
 
 <script>
 export default {
     props: {
-        buttonText: String,
+        buttonSize: String,
+        onClick: {
+            type: Function,
+            required: true
+        }
     }
 }
 </script>
 
 <style scoped>
-button {
+
+.big {
     width: 190px;
     height: 43px;
+}
+
+.small {
+    width: 130px;
+    height: 43px;
+}
+
+.Button {
     border-radius: 13px;
     border: 0px;
     padding: 0px;
@@ -22,7 +37,7 @@ button {
     transition: all .3s ease-out;
 }
 
-button:hover {
+.Button:hover {
     transform: scale(1.08);
     cursor: pointer;
     will-change: auto;
