@@ -63,16 +63,26 @@
                 If you have any questions, our support team is happy to help you 24/7.
             </p>
 
-            <div class="e-section__input">
-                <input class="input__field" placeholder="Your emailadress ;-)" />
-                <primary-button :onClick="consoleClick" buttonSize="small"> Get Started </primary-button>
-            </div>
+            <form class="e-section__form" @submit.prevent>
+                <input
+                    class="form__input"
+                    placeholder="Your emailadress"
+                    required
+                    autocomplete="off"
+                    v-model="email"
+                    type="email"
+                    name="email"
+                />
+                <sub class="form__feedback"> {{ feedback }} </sub>
+                <primary-button :onClick="validateEmail" buttonSize="small"> Get Started </primary-button>
+            </form>
         </div>
     </main>
 </template>
 
 <script>
 import PrimaryButton from "./PrimaryButton.vue";
+import axios from "axios";
 
 export default {
     components: {
@@ -80,6 +90,8 @@ export default {
     },
     data() {
         return {
+            email: '',
+            feedback: '',
             articles: [
                 {
                     title: "Access your files, anywhere",
@@ -128,15 +140,25 @@ export default {
     methods: {
         consoleClick() {
             console.log('Take me somewhere else! ;-)')
+        },
+        validateEmail() {
+            if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(this.email)) {
+                this.subscribeUser()
+            } else this.feedback = 'Please validate your email';
+        },
+        subscribeUser() {
+            axios
+                .post(`http://mockbin.com/request?email=${this.email}`)
+                .then(res => {(
+                    this.feedback = 'Succesfully send, and you will get access soon!'
+                )})
+                .catch(error => (
+                    this.feedback = 'Error, please try again later'
+                ))
+
         }
     }
 }
-
-// validate emailadress before sending it.
-// install axios package to make hhtp request.
-// send emailadress as a parameter to mockbin.
-// Give user feedback if succes.
-
 
 </script>
 
@@ -304,7 +326,7 @@ export default {
     padding: 5px 0px 30px 0px;
 }
 
-.e-section__input {
+.e-section__form {
     display: grid;
     grid-template-columns: 1fr;
     align-items: center;
@@ -313,12 +335,18 @@ export default {
     margin: 0 auto;
 }
 
-.input__field {
+.form__input {
     width: 100%;
     border-radius: 13px;
     height: 43px;
     border: 0px;
     text-align:center;
+}
+
+.form__feedback {
+    height: 15px;
+    width: 100%;
+    color: #41B883;
 }
 
 /* only for smartphones */
