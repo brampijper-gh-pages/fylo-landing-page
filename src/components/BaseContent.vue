@@ -10,7 +10,7 @@
                     Access them wherever you need, share and collaborate with friends family and co-workers.
                 </p>
             </article>
-            <primary-button button-text="Get Started"> </primary-button>
+            <primary-button :onClick="consoleClick" buttonSize="big"> Get Started </primary-button>
         </div>
 
         <div class="b-section">
@@ -35,7 +35,7 @@
                     family and colleagues for live collaboration. No
                     email attachments required.
                 </p>
-                <primary-button class="c-section__button" buttonText="See how Fylo works" />
+                <primary-button :onClick="consoleClick" class="c-section__button" buttonSize="big"> See how Fylo works </primary-button>
             </article>
         </div>
 
@@ -63,7 +63,7 @@
 
             <div class="e-section__input">
                 <input class="input__field" placeholder="Your emailadress ;-)" />
-                <primary-button buttonText="Get started for FREE"/>
+                <primary-button :onClick="consoleClick" buttonSize="small"> Get Started </primary-button>
             </div>
         </div>
     </main>
@@ -122,8 +122,19 @@ export default {
                 },
             ]
         }
+    },
+    methods: {
+        consoleClick() {
+            console.log('Btn clicked ;-)')
+        }
     }
 }
+
+// validate emailadress before sending it.
+// install axios package to make hhtp request.
+// send emailadress as a parameter to mockbin.
+// Give user feedback if succes.
+
 </script>
 
 <style scoped>
@@ -263,12 +274,12 @@ export default {
 }
 
 .e-section {
-    z-index:1;
-    width: 55%;
-    background-color: hsl(217, 28%, 15%);
+    width: 50vw;
     margin: 0 auto;
-    border-radius: 10px;
     padding: 35px;
+    z-index:1;
+    border-radius: 10px;
+    background-color: hsl(217, 28%, 15%);
     -webkit-box-shadow: 2px 2px 5px -1px rgba(0,0,0,0.56);
     -moz-box-shadow: 2px 2px 5px -1px rgba(0,0,0,0.56);
     box-shadow: 2px 2px 5px -1px rgba(0,0,0,0.56)
@@ -326,8 +337,11 @@ export default {
     }
 
     .e-section {
-        margin: 0 auto;
-        width: 70%;
+        width: 70vw;
+    }
+
+    .e-section__paragraph {
+        width: 90%;
     }
 }
 
@@ -341,9 +355,12 @@ export default {
 
     .e-section__input {
         grid-template-columns: 2fr 1fr;
-        justify-items:end;
         gap: 15px;
         width: 70%;   
+    }
+
+    .e-section__input:nth-last-child(1) {
+        justify-items:start;
     }
 }
 </style>
