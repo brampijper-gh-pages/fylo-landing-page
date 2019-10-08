@@ -24,7 +24,7 @@ const config = {
                 ]
             },
             {
-                test: /\.(png|jpg?g|gif)$/i,
+                test: /\.(png|jpg?g|gif|svg)$/i,
                 use: [
                     {
                         loader: 'file-loader',
@@ -56,6 +56,7 @@ const config = {
         new webpack.ProgressPlugin(),
         new HtmlWebpackPlugin({
             template: 'index.html',
+            title: 'Fylo - secure your files'
         }),
         new VueLoaderPlugin(),
         new CopyPlugin([
