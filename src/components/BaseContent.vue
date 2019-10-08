@@ -2,11 +2,12 @@
     <main role="main" class="main">
 
         <div class="a-section">
+
             <img class="a-section__img" src="assets/images/illustration-intro.png" />
             <article class="a-section__article">
                 <h1> All your files in one secure location</h1>
                 <p> 
-                    Filo stores all your most important files in one secure location.
+                    Fylo stores all your most important files in one secure location.
                     Access them wherever you need, share and collaborate with friends family and co-workers.
                 </p>
             </article>
@@ -19,6 +20,7 @@
                 <h3> {{ article.title }} </h3>
                 <p> {{ article.paragraph }} </p>
             </div>
+            
         </div>
 
         <div class="c-section">
@@ -70,7 +72,7 @@
 </template>
 
 <script>
-import PrimaryButton from "./PrimaryButton.vue"
+import PrimaryButton from "./PrimaryButton.vue";
 
 export default {
     components: {
@@ -125,7 +127,7 @@ export default {
     },
     methods: {
         consoleClick() {
-            console.log('Btn clicked ;-)')
+            console.log('Take me somewhere else! ;-)')
         }
     }
 }
@@ -134,6 +136,7 @@ export default {
 // install axios package to make hhtp request.
 // send emailadress as a parameter to mockbin.
 // Give user feedback if succes.
+
 
 </script>
 
@@ -148,8 +151,13 @@ export default {
 
 .a-section {
     margin: 0 auto;
-    width: 85%;
-    margin-bottom: 75px;
+    width: 100%;
+    padding-bottom: 75px;
+    background-color: hsl(218, 34%, 20%);
+    background-image: url('../assets/images/bg-curvy-desktop.svg');
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    background-size:contain;
 }
 
 .a-section__img {
@@ -230,7 +238,7 @@ export default {
 .d-section__card {
     padding-bottom: 15px;
     margin: 0 auto;
-    background-color: hsl(219, 30%, 18%);
+    background-color: hsl(218, 34%, 20%);
     margin: 15px;
     -webkit-box-shadow: 2px 2px 5px -1px rgba(0,0,0,0.56);
     -moz-box-shadow: 2px 2px 5px -1px rgba(0,0,0,0.56);
@@ -275,6 +283,7 @@ export default {
 
 .e-section {
     width: 50vw;
+    height: auto;
     margin: 0 auto;
     padding: 35px;
     z-index:1;
