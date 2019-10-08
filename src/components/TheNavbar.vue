@@ -1,6 +1,6 @@
 <template>
     <nav class="main-nav">
-        <img class="main-nav__logo" @click="scrollToSection(0)" src="/assets/images/logo.svg" />
+        <img class="main-nav__logo" @click="calculateScrollHeight(0)" src="assets/images/logo.svg" />
         <ul class="main-nav__menu">
             <li class="main-nav__menu-item" v-for="(link, index) in menu" :key="index">
                 <a class="main-nav__menu-item-link" href="#" @click.prevent="calculateScrollHeight(link.scrollTo)">
@@ -13,6 +13,7 @@
 
 <script>
 export default {
+    props: ['scrollFunction'],
     data() {
         return {
             menu: [
@@ -23,21 +24,8 @@ export default {
         }
     },
     methods: {
-        calculateScrollHeight(scrollTo) {
-            const section = document.getElementsByClassName(scrollTo)
-
-            if(section.length) {
-                const offsetHeight = section[0].offsetHeight;
-                const offsetTop = section[0].offsetTop;
-                this.scrollToSection(offsetHeight + offsetTop)
-            }
-        },
-        scrollToSection(height) {
-            window.scroll({
-                top: height,
-                left: 0,
-                behavior: 'smooth'
-            });
+        calculateScrollHeight: function(scrollTo) {
+            this.scrollFunction(scrollTo);
         }
     }
 }
