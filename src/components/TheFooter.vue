@@ -62,8 +62,8 @@
 <style scoped>
 
 .footer {
-    margin-top: -115px;
-    padding: 230px 4vw 50px 4vw;
+    margin-top: -160px;
+    padding: 230px 4vw 50px 5vw;
     background-color: hsl(216, 53%, 7%);
 }
 
