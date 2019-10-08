@@ -1,6 +1,6 @@
 <template>
     <nav class="main-nav">
-        <img class="main-nav__logo" src="/assets/images/logo.svg" />
+        <img class="main-nav__logo" @click="scrollToSection(0)" src="/assets/images/logo.svg" />
         <ul class="main-nav__menu">
             <li class="main-nav__menu-item" v-for="(link, index) in menu" :key="index">
                 <a class="main-nav__menu-item-link" href="#" @click.prevent="calculateScrollHeight(link.scrollTo)">
@@ -47,13 +47,15 @@ export default {
 .main-nav {
     display: grid;
     grid-template-columns: 1fr 10fr;
-    margin: 6vh 4vw 6vh 5vw;
+    padding: 6vh 4vw 6vh 5vw;
+    background-color: hsl(218, 34%, 20%);
 }
 
 .main-nav__logo {
     width: 100%;
     min-width: 60px;
     height: auto;
+    cursor: pointer;
 }
 
 .main-nav__menu {
