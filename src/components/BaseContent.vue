@@ -11,7 +11,7 @@
                     Access them wherever you need, share and collaborate with friends family and co-workers.
                 </p>
             </article>
-            <primary-button :onClick="consoleClick" buttonSize="big"> Get Started </primary-button>
+            <primary-button :onClick="calculateScrollHeight" buttonSize="big"> Get Started </primary-button>
         </div>
 
         <div class="b-section">
@@ -37,7 +37,7 @@
                     family and colleagues for live collaboration. No
                     email attachments required.
                 </p>
-                <primary-button :onClick="consoleClick" class="c-section__button" buttonSize="big"> See how Fylo works </primary-button>
+                <primary-button :onClick="calculateScrollHeight" class="c-section__button" buttonSize="big"> See how Fylo works </primary-button>
             </article>
         </div>
 
@@ -88,6 +88,7 @@ export default {
     components: {
         PrimaryButton
     },
+    props: ['scrollFunction'],
     data() {
         return {
             email: '',
@@ -138,8 +139,8 @@ export default {
         }
     },
     methods: {
-        consoleClick() {
-            console.log('Take me somewhere else! ;-)')
+        calculateScrollHeight: function(scrollTo) {
+            this.scrollFunction('e-section');
         },
         validateEmail() {
             if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(this.email)) {
