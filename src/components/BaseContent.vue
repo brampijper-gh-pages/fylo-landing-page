@@ -149,7 +149,7 @@ export default {
         },
         subscribeUser() {
             axios
-                .post(`http://mockbin.com/request?email=${this.email}`)
+                .post(`https://mockbin.com/request?email=${this.email}`)
                 .then(res => {(
                     this.feedback = 'Succesfully send, and you will get access soon!'
                 )})
