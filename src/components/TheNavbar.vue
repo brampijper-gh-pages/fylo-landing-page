@@ -74,7 +74,7 @@ export default {
 
     .main-nav {
         grid-template-columns: 1fr 4fr;
-        margin: 6vh 4vw 6vh 2vw;
+        /* margin: 6vh 4vw 6vh 2vw; */
     }
 
     .main-nav__menu-item {
